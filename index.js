@@ -17,14 +17,24 @@ app.use(express.static('public'))
 
 
 app.get('/', (req, res) => {
-    res.render('index')
- /*   res.status(200)
-      res.sendFile(path.join(__dirname, 'views', 'index.html')) */
+    res.render('index', {
+        title: 'Main page',
+        isHome: true
+    })
 })
 
-app.get('/about', (req, res) => {
-    res.render('about')
-//    res.sendFile(path.join(__dirname, 'views', 'about.html'))
+app.get('/add', (req, res) => {
+    res.render('add', {
+        title: 'Add new course',
+        isAdd: true
+    })
+})
+
+app.get('/courses', (req, res) => {
+    res.render('courses', {
+        title: 'Courses page',
+        isCourses: true
+    })
 })
 
 
