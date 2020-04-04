@@ -13,6 +13,8 @@ app.engine('hbs', hbs.engine) //регестрируем движок в экс�
 app.set('view engine', 'hbs') // начинаем использовать
 app.set('views', 'views')
 
+app.use(express.static('public'))
+
 
 app.get('/', (req, res) => {
     res.render('index')
