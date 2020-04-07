@@ -13,11 +13,11 @@ const hbs = exphbs.create({
     extname: 'hbs'
 })
 
-app.engine('hbs', hbs.engine) //регестрируем движок в эксперессе
+app.engine('hbs', hbs.engine) // регестрируем движок в эксперессе
 app.set('view engine', 'hbs') // начинаем использовать
 app.set('views', 'views')
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({extended: true}))
 app.use('/', homeRoutes)
 app.use('/add', addRoutes)
